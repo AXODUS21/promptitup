@@ -27,7 +27,7 @@ const OtherProfile = () => {
   return (
     <Profile
       name={posts[0]?.creator.username}
-      desc="Welcome to your personalized profile page"
+      desc="You are viewing another person's profile"
       data={posts}
     />
   );
