@@ -38,7 +38,7 @@ const fetchPosts = async () => {
   useEffect(() => {
     fetchPosts();
     console.log("Fetching posts...");
-  }, [allPosts]);
+  }, []);
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchtext, "i");
