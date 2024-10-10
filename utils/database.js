@@ -12,10 +12,11 @@ export const connectToDB = async () => {
     }
     try{
         await mongoose.connect(process.env.MONGODB_URI, {
-            dbName: "share_prompt", //*the name of the database that you want to show up on the collection
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        })
+          dbName: "share_prompt", //*the name of the database that you want to show up on the collection
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          serverSelectionTimeoutMS: 30000,
+        });
 
         isConnected = true;
 
