@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
-//TODO: figure out why does it seem to be reloading the page when Im trying to edit it
 const UpdatePrompt = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
