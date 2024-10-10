@@ -17,7 +17,7 @@ const CreatePrompt = () => {
   const createPrompt = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-
+    
     try{
       const response = await fetch('/api/prompt/new', {
         method: 'POST',
@@ -28,9 +28,9 @@ const CreatePrompt = () => {
         })
       })
 
-      if(response.ok){
+      if(response.ok){  
         router.push('/');
-      }
+      } 
     } catch (err){
       console.error(err)
     } finally {
