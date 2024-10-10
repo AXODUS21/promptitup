@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
+  console.log("Rendering PromptCardList with data:", data); 
   return (
     <div className="mt-16 prompt_layout">
       {data.map((post) => (
@@ -26,12 +27,13 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-  const fetchPosts = async () => {
-    const response = await fetch("/api/prompt", {cache: "no-store"});
-    const data = await response.json();
+const fetchPosts = async () => {
+  const response = await fetch("/api/prompt", { cache: "no-store" });
+  const data = await response.json();
 
-    setAllPosts(data);
-  };
+  console.log("Fetched Posts:", data); // Log fetched data
+  setAllPosts(data);
+};
 
   useEffect(() => {
     fetchPosts();
@@ -84,6 +86,7 @@ const Feed = () => {
       {/* All Prompts */}
       {searchText ? (
         <PromptCardList
+
           data={searchedResults}
           handleTagClick={handleTagClick}
         />
